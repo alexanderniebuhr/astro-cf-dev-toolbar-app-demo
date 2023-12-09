@@ -1,0 +1,20 @@
+{
+  "name": "astro-cf-dev-toolbar-app-demo",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.3.1",
+    "@astrojs/cloudflare": "0.0.0-dev-toolbar-app-20231214141808",
+    "@astrojs/mdx": "^2.0.0",
+    "astro": "4.0.3",
+    "astro-expressive-code": "^0.29.3",
+    "typescript": "5.3.3"
+  }
+}

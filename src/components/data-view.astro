@@ -1,0 +1,9 @@
+---
+const runtime = Astro.locals.runtime;
+const db = runtime.env?.PRESENTS;
+const result = await db.prepare("SELECT * FROM worldwide").all();
+---
+
+<pre>
+  { JSON.stringify(result, null, 2) }
+</pre>

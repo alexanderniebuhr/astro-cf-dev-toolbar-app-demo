@@ -1,0 +1,19 @@
+---
+
+---
+
+<button id="init"> Generate Data</button>
+
+<script>
+  const button = document.getElementById("init");
+  button?.addEventListener("click", (event: MouseEvent) => {
+    fetch("/init").then((res) => {
+      if (res.ok) {
+        button.innerText = "Data Generated!";
+        button.setAttribute("disabled", "true");
+        button.style.backgroundColor = "green";
+      } else {
+      }
+    });
+  });
+</script>

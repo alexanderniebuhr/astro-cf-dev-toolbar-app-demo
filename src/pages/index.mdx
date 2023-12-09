@@ -1,0 +1,75 @@
+import '../styles/global.css';
+import InitButton from "../components/init.astro"
+import DataView from "../components/data-view.astro"
+
+# Cloudflare Dev Toolbar App (Demo)
+
+It's winter season and Santa needs some help to manage his presents. He lost track of all the presents he has to deliver. Can you help him out, by fixing the data?
+
+P.S.: In case something breaks or you want to start over, just remove the `.wrangler` direcotry from the project.
+
+## Step 1 (Setup)
+
+### Add bindings
+First we need to add local bindings for our Database to our config:
+
+```js ins={14-18}
+// astro.config.mjs
+import cloudflare from "@astrojs/cloudflare";
+import expressiveCode from "astro-expressive-code";
+import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
+
+export default defineConfig({
+  output: "server",
+  adapter: cloudflare({
+    mode: "advanced",
+    runtime: {
+      mode: "local",
+      type: "pages",
+      bindings: {
+        PRESENTS: {
+          type: "d1",
+        },
+      },
+    },
+  }),
+  integrations: [expressiveCode(), mdx()],
+});
+```
+### Restart Dev Server
+We just added a new shelf to Santa's workshop. Let's restart the dev server to make sure everything is known to the system.
+
+### Generate initial data
+
+Now we need to load the exisiting data from the HQ. Click the button below to generate the initial data.
+
+<InitButton />
+
+### Add data to page
+
+We would like to show the data on the page. Uncomment the next line in `index.mdx`:
+
+{/*
+<DataView />
+*/}
+
+## Step 2 (Explore Dev Toolbar App)
+
+### Open Dev Toolbar
+Hover over the bottom of the screen to open the Dev Toolbar. You should see a new icon in the toolbar, Cloudflare Plugin. Click it to open the Cloudflare Dev Toolbar App.
+
+### Get familar with the tabs
+The app contains 2 tabs: Home and D1. For sake of this demo we are only interested in the D1 tab. Click it to open it.
+
+### Explore the data
+
+You should see different steps in the flow, play around with the App. Hint: You can click on the cards, as well as the table rows, to proceed through the flow. There is also the option to go back one step.
+
+Try to find the generated data from earlier, it should have two entries. One entry has the issue that the child doesn't have a name, can you help Santa fix this?
+
+### Edit the data
+
+Follow the flow and edit the Entry. (Make sure you keep the "" around the name, otherwise the data will be invalid).
+Update the wrong name with any name you want.
+The Data should now be reloaded and the new name should be visible on the page, if it is not, you might need to reload.

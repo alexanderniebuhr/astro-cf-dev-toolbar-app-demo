@@ -1,0 +1,83 @@
+/* Global Styles for Winter-Themed Website */
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Font */
+body {
+  font-family: 'Arial', sans-serif; /* Clean and readable */
+  color: #F0F8FF; /* Light text for contrast */
+  background-color: #0A192F; /* Dark background */
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 500px;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+/* Links */
+a {
+  color: #64B6AC; /* Icy blue for a wintery feel */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #D1E8E2; /* Lighter shade for hover effect */
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #E6F1FF; /* Slightly different shade for headings */
+  margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+  background-color: #4C669F; /* Deep blue, reminiscent of winter evenings */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #3B5998; /* Darker shade on hover */
+}
+
+/* Containers */
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Card Style */
+.card {
+  background-color: #1C2541; /* Darker shade for card backgrounds */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+  background-color: #14213D; /* Very dark blue */
+  color: #F0F8FF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 10px;
+  }
+}
